@@ -100,9 +100,40 @@
    **GET** um/v1/info/get/id
 
    *return verificationStatus*
+   
+   ```json
+   response:
+   {
+      "verificationStatus": "UN_VERIFIED"
+   }
+   ```
 
 
 
 ### Process Flow
 
-1. **Complete User Info**
+**Complete User Info**
+
+![Screen Shot 2020-08-24 at 14.17.45](./Screen%20Shot%202020-08-24%20at%2014.17.45.png)
+
+![complete user info with id card verification](./complete_user_info_with_id_card_verification.png)
+
+
+### Note
+1. **update id card**
+
+check all endpoint of updating user info.
+
+If updates relate to id card updating, verificationStatus needs to be checked, id card can not be updated in status: CHINA_ID_VERIFIED.
+
+2. **avoid frequently web service call**
+
+should cache id card verification result if we can, avoid calling web service repeatly, to save money.
+
+the max times of users register is 600 per day now, in worest condition, there could be 1200+ times call for verification.
+
+3. **Cache Penetration Or Malicious Request**
+
+should avoid frequently request to verification id card, backend service must check the verification-failed times of every userId.
+
+verification request is allowed up to 5 times per day for each user.
