@@ -134,6 +134,6 @@ the max times of users register is 600 per day now, in worest condition, there c
 
 3. **Cache Penetration Or Malicious Request**
 
-should avoid frequently request to verification id card, backend service must check the verification-failed times of every userId.
+should avoid frequently request to verify id card, backend service must check the verification-failed times of every userId.
 
 verification request is allowed up to 5 times per day for each user.
