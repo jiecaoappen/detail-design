@@ -138,3 +138,5 @@ the max times of users register is 600 per day now, in worest condition, there c
 should avoid frequently request to verify id card, backend service must check the verification-failed times of every userId.
 
 verification request is allowed up to 5 times per day for each user.
+
+4. **Don't call real web service in dev**
