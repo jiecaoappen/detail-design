@@ -89,9 +89,10 @@
 
    **POST** um/v1/info/idcard/update
 
-   *Check verification status if idCardType is CHINA_RESIDENT_IDENTITY_CARD, return failed response if verification status is VERIFIED*
+   *Check verification status if idCardType is CHINA_RESIDENT_IDENTITY_CARD, return failed response when verification status is VERIFIED*
 
-   
+   *if verfication status is UN_VERIFIED, read redis and save verification status from redis cache and idcard*
+      
 
 3. **Retrieve user info** (already exists)
 
