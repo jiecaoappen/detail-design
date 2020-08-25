@@ -34,6 +34,7 @@
    
    request:
    String idCardNumber
+   IDCardType idCardType
    String name
    
    response:
@@ -55,6 +56,7 @@
    
    request:
    String idCardNumber
+   IDCardType idCardType
    String name
    
    response:
