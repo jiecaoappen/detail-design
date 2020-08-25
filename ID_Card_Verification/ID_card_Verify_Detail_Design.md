@@ -2,7 +2,7 @@
 
 1. **DataBase**
 
-   ```mssql
+   ```sql
    ALTER table ls_um_user_info_t
    ADD COLUMN verification_status varchar(30) DEFAULT 'UN_VERIFIED' COMMENT 'id verification status'
    ```
