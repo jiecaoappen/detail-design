@@ -23,7 +23,7 @@
 
 ### API definition
 
-1. **ID card verify** (new api)
+1. ~~**ID card verify** (new api)~~
 
    **POST** um/v1/info/idcard/verify
 
@@ -45,7 +45,7 @@
 
    
 
-2. **ID card verify and update**
+2. **ID card verify and update** (new api)
 
    **POST** um/v1/info/idcard/verify-and-update
 
