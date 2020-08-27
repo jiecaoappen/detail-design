@@ -15,37 +15,16 @@
    }
    
    enum VerficationStatus {
-     UN_VERIFIED, CHINA_ID_VERIFIED
+     UN_VERIFIED, CHINA_ID_VERIFIED, OFFLINE_VERIFY
    }
    ```
 
 
 
 ### API definition
-
-1. ~~**ID card verify** (new api)~~
-
-   **POST** um/v1/info/idcard/verify
-
-   *Verify ID card and upload result to redis as cache*
-
-   ``` javascript
-   role acccess: worker
-   
-   request:
-   String idCardNumber
-   IDCardType idCardType
-   String name
-   
-   response:
-   data(boolean): true/false  
-   HTTP CODE:200  //verified, result is in data
-   HTTP CODE:400	 //request failed, need to retry
-   ```
-
    
 
-2. **ID card verify and update** (new api)
+1. **ID card verify and update** (new api)
 
    **POST** um/v1/info/idcard/verify-and-update
 
@@ -67,7 +46,7 @@
 
 
 
-3. **Check IP region**
+2. **Check IP region**
 
    **GET** um/v1/info/ip-region
 
@@ -96,7 +75,7 @@
    *if verfication status is UN_VERIFIED, read redis and save verification status from redis cache and idcard*
       
 
-3. **Retrieve user info** (already exists)
+4. **Retrieve user info** (already exists)
 
    **GET** um/v1/info/get
 
@@ -147,3 +126,8 @@ should avoid frequently request to verify id card, backend service must check th
 verification request is allowed up to 5 times per day for each user.
 
 4. **Don't call real web service in dev**
+
+
+5. **Verification service usage alert**
+
+every successfully verification leads to an incr operation of mongo document : "id_verification_usage", a watch will be set up in Prometheus, to alert avaliable usage.
