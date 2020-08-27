@@ -94,14 +94,7 @@
 
 ### Process Flow
 
-1. **Complete User Info**
-
-![Screen Shot 2020-08-24 at 14.17.45](./Screen%20Shot%202020-08-24%20at%2014.17.45.png)
-
-![complete user info with id card verification](./complete_user_info_with_id_card_verification.png)
-
-
-2. **Verify And Updaate API Behavior**
+1. **Verify And Updaate API Behavior**
 
 ![verify-process](./verify-process.png)
 
