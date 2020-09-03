@@ -2,6 +2,10 @@
 ## **new field to save current push status**
 Push_Status: PENDING, PUSHING, SUCCESS, FAIL
 
+```SQL
+ALTER TABLE ls_um_payment_ac_invoice_t ADD COLUMN push_status VARCHAR(20) DEFAULT 'PENDING' COMMENT 'push invoice to AC status';
+```
+
 ![PUSH_STATUS_LIFE_CYCLE](./push_status.png)
 
 
