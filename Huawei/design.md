@@ -59,7 +59,7 @@
 
 
 
-![img](/Users/Jicao/Documents/design/huawei/Agent.png)
+![img](https://github.com/jiecaoappen/detail-design/blob/master/Huawei/Agent.png)
 
 
 
