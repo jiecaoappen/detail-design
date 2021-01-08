@@ -116,8 +116,8 @@
   - 外部调用方的token需要我们帮助一次生成（根据项目长度设置token过期时间），是一个长期有效的token，client不需要反复登陆去刷新token
 
 
-**A9的内部改动**
+- **A9的内部改动**
 
-- 针对与外部集成的任务，任务每个阶段完成后，必须触发webhook回调通知client，这种集成任务的job，其targetTopic会起一个新的consumer，该consumer会负责收到消息后回调webhook，成功后ack该消息，未成功则可以重复收到消息一直尝试。
-- taskrecord中需要增加externalId，用于标示对应的外部系统的任务id。放在source这个map中，key为externalid。
-- 增加一个mapping表，用于保存externalId和recordId的对应关系，添加record时，先查询mapping表查看是否已经存在对应的externalId，若已存在，不做添加，不存在则添加。（发送到pulsar和写入mapping表，这两者涉及2PC，可能有数据一致性问题）
+  - 针对与外部集成的任务，任务每个阶段完成后，必须触发webhook回调通知client，这种集成任务的job，其targetTopic会起一个新的consumer，该consumer会负责收到消息后回调webhook，成功后ack该消息，未成功则可以重复收到消息一直尝试。
+  - taskrecord中需要增加externalId，用于标示对应的外部系统的任务id。放在source这个map中，key为externalid。
+  - 增加一个mapping表，用于保存externalId和recordId的对应关系，添加record时，先查询mapping表查看是否已经存在对应的externalId，若已存在，不做添加，不存在则添加。（发送到pulsar和写入mapping表，这两者涉及2PC，可能有数据一致性问题）
