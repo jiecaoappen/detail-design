@@ -35,7 +35,7 @@
 
 - **A9的OpenAPI**
 
-  - 添加一条或一批record到最新的批次
+  - 添加一条或一批record到最新的批次（幂等操作）
 
     ```java
     - Post  /project/v2/job/record/external/records
@@ -71,7 +71,7 @@
   |  recordId  | A9内部的recordId |
   |   Result   |   标注结果地址   |
 
-  - 新建一个批次，添加一条或一批record到新批次
+  - 新建一个批次，添加一条或一批record到新批次（幂等操作）
 
     ``` java
     - Post  /project/v2/job/record/external/records-new-batch
