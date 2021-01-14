@@ -49,7 +49,7 @@
   |   Field    | Description  |
   | :--------: | :----------: |
   | externalId | 外部的任务id |
-  | sourceFile | 任务文件地址 |
+  | source | 任务数据（相当于现在上传的csv中的一行） |
   |    memo    |     备注     |
 
   - 获取一条或一批record的标注结果
